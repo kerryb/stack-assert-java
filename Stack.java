@@ -61,5 +61,10 @@ class Stack {
       fail("Popping an empty stack should raise a Stack::EmptyStackError");
     } catch(Stack.EmptyStackError e) {
     }
+
+    stack = new Stack();
+    stack.push("foo");
+    stack.pop();
+    assertTrue(stack.isEmpty(), "A stack should be empty after popping the last item");
   }
 }
