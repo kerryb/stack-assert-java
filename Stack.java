@@ -1,25 +1,24 @@
+import java.util.ArrayList;
+
 class Stack {
   class EmptyStackError extends RuntimeException {
   }
 
-  private boolean empty = true;
-  private Object item = null;
+  private ArrayList items = new ArrayList();
 
   public void push(Object item) {
-    empty = false;
-    this.item = item;
+    items.add(item);
   }
 
   public Object pop() {
     if (isEmpty()) {
       throw new EmptyStackError();
     }
-    empty = true;
-    return item;
+    return items.remove(items.size() - 1);
   }
 
   public boolean isEmpty() {
-    return empty;
+    return items.isEmpty();
   }
 
   private static void fail(String message) {
