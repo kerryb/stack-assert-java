@@ -11,6 +11,9 @@ class Stack {
   }
 
   public Object pop() {
+    if (isEmpty()) {
+      throw new EmptyStackError();
+    }
     return item;
   }
 
