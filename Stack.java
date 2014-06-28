@@ -1,12 +1,14 @@
 class Stack {
   private boolean empty = true;
+  private Object item = null;
 
   public void push(Object item) {
     empty = false;
+    this.item = item;
   }
 
   public Object pop() {
-    return null;
+    return item;
   }
 
   public boolean isEmpty() {
