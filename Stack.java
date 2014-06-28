@@ -18,21 +18,25 @@ class Stack {
     return empty;
   }
 
+  private static void fail(String message) {
+    System.err.println("FAILED: " + message);
+  }
+
   private static void assertTrue(boolean actual, String message) {
     if (!actual) {
-      System.err.println(message);
+      fail(message);
     }
   }
 
   private static void assertFalse(boolean actual, String message) {
     if (actual) {
-      System.err.println(message);
+      fail(message);
     }
   }
 
   private static void assertEqual(Object expected, Object actual, String message) {
     if (!expected.equals(actual)) {
-      System.err.println(message + "(expected " + expected + ", got " + actual + ")");
+      fail(message + "(expected " + expected + ", got " + actual + ")");
     }
   }
 
@@ -51,7 +55,7 @@ class Stack {
     stack = new Stack();
     try {
       stack.pop();
-      System.err.println("Popping an empty stack should raise a Stack::EmptyStackError");
+      fail("Popping an empty stack should raise a Stack::EmptyStackError");
     } catch(Stack.EmptyStackError e) {
     }
   }
