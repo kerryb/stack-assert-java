@@ -27,7 +27,7 @@ class Stack {
 
   private static void assertEqual(Object expected, Object actual, String message) {
     if (!expected.equals(actual)) {
-      System.err.println(message);
+      System.err.println(message + "(expected " + expected + ", got " + actual + ")");
     }
   }
 
