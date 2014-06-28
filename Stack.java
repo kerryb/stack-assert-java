@@ -1,4 +1,7 @@
 class Stack {
+  class EmptyStackError extends RuntimeException {
+  }
+
   private boolean empty = true;
   private Object item = null;
 
@@ -44,5 +47,12 @@ class Stack {
     stack = new Stack();
     stack.push("foo");
     assertEqual("foo", stack.pop(), "Popping a stack after pushing an item should return the item");
+
+    stack = new Stack();
+    try {
+      stack.pop();
+      System.err.println("Popping an empty stack should raise a Stack::EmptyStackError");
+    } catch(Stack.EmptyStackError e) {
+    }
   }
 }
