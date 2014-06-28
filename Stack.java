@@ -67,5 +67,11 @@ class Stack {
     stack.push("foo");
     stack.pop();
     assertTrue(stack.isEmpty(), "A stack should be empty after popping the last item");
+
+    stack = new Stack();
+    stack.push("foo");
+    stack.push("bar");
+    assertEqual("bar", stack.pop(), "Popping a stack should return the last item pushed");
+    assertEqual("foo", stack.pop(), "Popping a stack again should return the previous item pushed");
   }
 }
