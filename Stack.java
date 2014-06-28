@@ -1,9 +1,12 @@
 class Stack {
+  private boolean empty = true;
+
   public void push(Object item) {
+    empty = false;
   }
 
   public boolean isEmpty() {
-    return true;
+    return empty;
   }
 
   public static void main(String[] args) {
