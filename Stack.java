@@ -14,6 +14,7 @@ class Stack {
     if (isEmpty()) {
       throw new EmptyStackError();
     }
+    empty = true;
     return item;
   }
 
